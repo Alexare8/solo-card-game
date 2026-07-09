@@ -1,0 +1,13 @@
+MVP
+- deck of cards
+- shuffle
+- deal cards
+- hand of cards
+- select a card
+- cards on table
+- discard?
+
+Games
+- Lobo
+- Go fish
+-

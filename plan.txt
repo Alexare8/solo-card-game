@@ -1,13 +1,20 @@
 MVP
-- deck of cards
-- shuffle
-- deal cards
-- hand of cards
-- select a card
+X card
+X deck of cards
+X shuffle
+X deal cards
+X hand of cards
+X select a card
 - cards on table
+X compare cards
 - discard?
+- sort cards?
 
 Games
 - Lobo
 - Go fish
--
+X High Card
+
+Card
+X Suit
+X Rank

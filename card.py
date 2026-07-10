@@ -1,12 +1,12 @@
-from enum import Enum
+from enum import IntEnum
 from random import choice, randint
 
 
-class Suit(Enum):
-    SPADES = 1
-    DIAMONDS = 2
-    CLUBS = 3
-    HEARTS = 4
+class Suit(IntEnum):
+    SPADES = 4
+    DIAMONDS = 3
+    CLUBS = 2
+    HEARTS = 1
 
 
 class Card:

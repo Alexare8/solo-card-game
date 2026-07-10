@@ -7,7 +7,7 @@ suits = [Suit.SPADES, Suit.DIAMONDS, Suit.CLUBS, Suit.HEARTS]
 for suit in suits:
     for rank in range(1, 14):
         standardCardList.append((rank, suit))
-standardCardList = standardCardList[:26] + standardCardList[51:25:-1]
+standardCardList = standardCardList[:26] + standardCardList[38:25:-1] + standardCardList[51:38:-1]
 
 
 class Deck:
@@ -20,6 +20,9 @@ class Deck:
         cardStrings = [str(card) for card in self.cards]
         return ", ".join(cardStrings)
 
+    def __len__(self) -> int:
+        return len(self.cards)
+
     def peekTop(self) -> Card:
         return self.cards[0]
 
@@ -28,14 +31,3 @@ class Deck:
 
     def shuffle(self) -> None:
         randomShuffle(self.cards)
-
-
-def main():
-    print("hello?")
-    deck = Deck([])
-    print(f"Top card: {deck.peekTop()}")
-    print(f"Draw a card: {deck.draw()}")
-    print(f"Draw a card: {deck.draw()}")
-    print(f"Pre-Shuffle: {deck}")
-    deck.shuffle()
-    print(f"Shuffled: {deck}")

@@ -1,20 +1,12 @@
 from random import shuffle as randomShuffle
 
-from card import Card, Suit
-
-standardCardList = []
-suits = [Suit.SPADES, Suit.DIAMONDS, Suit.CLUBS, Suit.HEARTS]
-for suit in suits:
-    for rank in range(1, 14):
-        standardCardList.append((rank, suit))
-standardCardList = standardCardList[:26] + standardCardList[38:25:-1] + standardCardList[51:38:-1]
+from card import Card
 
 
 class Deck:
-    def __init__(self, cardList: list[tuple[int, Suit]] = standardCardList) -> None:
+    def __init__(self, ranks: list[tuple], suits: list[tuple]) -> None:
         self.cards = []
-        for card in cardList:
-            self.cards.append(Card(card[0], card[1]))
+        self.populate(ranks, suits)
 
     def __str__(self) -> str:
         cardStrings = [str(card) for card in self.cards]
@@ -28,6 +20,11 @@ class Deck:
 
     def draw(self) -> Card:
         return self.cards.pop(0)
+
+    def populate(self, ranks, suits) -> None:
+        for rank, printRank in ranks:
+            for suit, icon in suits:
+                self.cards.append(Card(rank, printRank, suits, icon))
 
     def shuffle(self) -> None:
         randomShuffle(self.cards)

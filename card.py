@@ -1,56 +1,18 @@
-from enum import IntEnum
-from random import choice, randint
-
-
-class Suit(IntEnum):
-    SPADES = 4
-    DIAMONDS = 3
-    CLUBS = 2
-    HEARTS = 1
-
-
 class Card:
-    def __init__(self, rank: int, suit: Suit) -> None:
+    def __init__(self, rank: int, printRank: str, suit: int, suitIcon: str) -> None:
         self.rank = rank
+        self.printRank = printRank
         self.suit = suit
+        self.suitIcon = suitIcon
 
     def __str__(self) -> str:
-        return f"{self.printRankLetter()}{self.printSuitIcon()}"
+        return f"{self.printRank}{self.suitIcon}"
 
-    def printRankLetter(self) -> str:
-        match self.rank:
-            case 1:
-                return "A"
-            case 11:
-                return "J"
-            case 12:
-                return "Q"
-            case 13:
-                return "K"
-            case _:
-                return str(self.rank)
-
-    def printSuitIcon(self) -> str:
-        match self.suit:
-            case Suit.SPADES:
-                return "♠"
-            case Suit.DIAMONDS:
-                return "♦"
-            case Suit.CLUBS:
-                return "♣"
-            case Suit.HEARTS:
-                return "♥"
-
-
-def randomCard() -> Card:
-    rank = randint(1, 13)
-    suit = choice([Suit.SPADES, Suit.DIAMONDS, Suit.CLUBS, Suit.HEARTS])
-    return Card(rank, suit)
-
-
-def main():
-    output = ""
-    for _ in range(5):
-        output += f" {randomCard()}"
-
-    print(output)
+    def greaterThan(self, otherCard: Card) -> bool:
+        if self.rank > otherCard.rank:
+            return True
+        if self.rank < otherCard.rank:
+            return False
+        if self.suit > otherCard.suit:
+            return True
+        return False

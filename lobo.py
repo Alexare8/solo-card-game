@@ -165,7 +165,6 @@ def round(difficulty) -> tuple[bool, int]:
         except Exception as e:
             print(f"Error: {e}")
 
-
     if len(wolfHand) == 0:
         score = sum([card.rank for card in playerHand])
         print(f"You win the round! You score {score} points.")

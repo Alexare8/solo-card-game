@@ -1,7 +1,7 @@
 RULES = """
 Lobo is a challenging solitaire game originally created by James Ernest.
 Lobo uses the "Postas Deck", a 5 suited deck with cards ranked 1-10.
-You are delt four cards, as is your opponent the Wolf. Both hands of cards are
+You are dealt four cards, as is your opponent the Wolf. Both hands of cards are
 visible to you, and the top card of the deck is always face up. Your goal is to
 empty the Wolf's hand. Even if you cannot defeat the Wolf, you are still trying
 to leave it with the smallest number of points. You will play several rounds,
@@ -37,7 +37,7 @@ lose the round. The Wolf scores points equal to the ranks of all the card's left
 in their hand. Your remaining cards are ignored. (Sometimes you should fold even
 if you still have actions to keep the Wolf's score low)
 
-The deck is shuffled and another hand is delt.
+The deck is shuffled and another hand is dealt.
 Play continues until you or the Wolf reaches 100 points.
 
 Lobo is a difficult game, and wins are rare. They say “The Wolf takes small

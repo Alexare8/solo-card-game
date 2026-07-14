@@ -5,14 +5,14 @@ X shuffle
 X deal cards
 X hand of cards
 X select a card
-- cards on table
+X cards on table
 X compare cards
     X Should be card method. cardA.compare(cardB) -> bool
-- discard?
+X discard?
 - sort cards?
 
 Games
-- Lobo
+X Lobo
 - Go fish
 X High Card
 - The Bogey
@@ -20,4 +20,4 @@ X High Card
 Card
 X Suit
 X Rank
-- compare
+X compare

@@ -39,4 +39,15 @@ if you still have actions to keep the Wolf's score low)
 
 The deck is shuffled and another hand is delt.
 Play continues until you or the Wolf reaches 100 points.
+
+Lobo is a difficult game, and wins are rare. They say “The Wolf takes small
+bites,” meaning that a player must often be satisfied with a minimal loss,
+rather than a win. Choosing the right time to fold is one of the hardest
+elements of perfect play. Fighting too long, or taking big risks without a
+clear path to victory, can be costly.
+
+The difficulty of the game can be adjusted by removing the highest rank cards.
+Easy uses ranks 1-8.
+Normal uses ranks 1-9.
+Hard uses ranks 1-10.
 """

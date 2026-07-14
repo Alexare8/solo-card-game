@@ -7,18 +7,6 @@ def displayHand(hand: list[Card]) -> str:
     return "Hand: " + ", ".join(cards)
 
 
-def compareCards(cardOne: Card, cardTwo: Card) -> bool:
-    if cardOne == cardTwo:
-        raise ValueError("Identical cards being compared.")
-    if cardOne.rank > cardTwo.rank:
-        return True
-    if cardOne.rank < cardTwo.rank:
-        return False
-    if cardOne.suit > cardTwo.suit:
-        return True
-    return False
-
-
 def game() -> int:
     HAND_SIZE = 2
     if HAND_SIZE < 1:

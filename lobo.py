@@ -50,8 +50,14 @@ def selectMultipleCards(sourceList: list[Card]) -> list[Card]:
     return selection
 
 
-def round() -> tuple[bool, int]:
-    RANKS = [(num, str(num)) for num in range(1, 11)]
+def round(difficulty) -> tuple[bool, int]:
+    rank_offset = 0
+    if difficulty == "easy":
+        rank_offset = 2
+    if difficulty == "normal":
+        rank_offset = 1
+
+    RANKS = [(num, str(num)) for num in range(1, 11 - rank_offset)]
     SUITS = [(5, "★"), (4,"♠"), (3,"♦"), (2,"♣"), (1,"♥")]
     deck = Deck(RANKS, SUITS)
     deck.shuffle()
@@ -170,11 +176,11 @@ def round() -> tuple[bool, int]:
         return (False, score)
 
 
-def game() -> None:
+def game(difficulty: str) -> None:
     playerScore = 0
     wolfScore = 0
     while (playerScore < 100 and wolfScore < 100):
-        result = round()
+        result = round(difficulty)
         if result[0]:
             playerScore += result[1]
         else:
@@ -191,11 +197,13 @@ def play() -> None:
     startInput = parseInput(["rules", ""], "Press Enter to begin a game. Type Rules for an explanation. Type Quit to quit.\n")
     if startInput == "rules":
         print(RULES)
-        print("Press Enter to begin a game. Type Quit any time to quit.\n")
+        parseInput([""], ("Press Enter to begin a game. Type Quit at any time to quit."))
 
     keepPlaying = True
     while keepPlaying:
-        game()
+        difficulty = parseInput(["easy", "normal", "hard"], "Easy, Normal, or Hard? ")
+        print("")
+        game(difficulty)
         playerChoice = parseInput(["", "y", "yes", "n", "no"], "Play again? Y/N: ")
         if playerChoice in ["n", "no"]:
             sys.exit()

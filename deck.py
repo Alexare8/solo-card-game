@@ -24,7 +24,7 @@ class Deck:
     def populate(self, ranks, suits) -> None:
         for rank, printRank in ranks:
             for suit, icon in suits:
-                self.cards.append(Card(rank, printRank, suits, icon))
+                self.cards.append(Card(rank, printRank, suit, icon))
 
     def shuffle(self) -> None:
         randomShuffle(self.cards)

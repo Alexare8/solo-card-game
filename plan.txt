@@ -7,7 +7,7 @@ X hand of cards
 X select a card
 - cards on table
 X compare cards
-    - Should be card method. cardA.compare(cardB) -> bool
+    X Should be card method. cardA.compare(cardB) -> bool
 - discard?
 - sort cards?
 

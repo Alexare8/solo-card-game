@@ -1,6 +1,6 @@
 from deck import Deck
 from card import Card
-from loboRules import RULES
+from loboRules import RULES, QUICK_RULES
 import sys
 
 
@@ -8,8 +8,10 @@ def parseInput(options: list[str], message: str = "") -> str:
     while True:
         rawInputString = input(message)
         inputString = rawInputString.lower()
-        if inputString in ["exit", "quit", "q"]:
+        if inputString in ["quit", "q", "exit"]:
             sys.exit()
+        if inputString in ["full rules", "fullrules"]:
+            print(RULES)
         elif inputString in options:
             return inputString
 
@@ -50,7 +52,7 @@ def selectMultipleCards(sourceList: list[Card]) -> list[Card]:
     return selection
 
 
-def round(difficulty) -> tuple[bool, int]:
+def game_round(difficulty) -> tuple[bool, int]:
     rank_offset = 0
     if difficulty == "easy":
         rank_offset = 2
@@ -70,7 +72,7 @@ def round(difficulty) -> tuple[bool, int]:
             print(f"Wolf hand: {", ".join([str(card) for card in wolfHand])}")
             print(f"Your hand: {", ".join([str(card) for card in playerHand])}")
             print(f"Top card: {deck.peekTop()}")
-            match parseInput(["perfect", "sum", "split", "over", "fold"], "PERFECT, SUM, SPLIT, OVER, or FOLD? "):
+            match parseInput(["perfect", "sum", "split", "over", "fold", "rules"], "PERFECT, SUM, SPLIT, OVER, FOLD, or RULES? "):
 
                 case "perfect":
                     print("Select a card from your hand: ")
@@ -158,6 +160,9 @@ def round(difficulty) -> tuple[bool, int]:
                 case "fold":
                     continueRound = False
 
+                case "rules":
+                    print(QUICK_RULES)
+
             print("")
             if len(playerHand) == 0 or len(wolfHand) == 0:
                 continueRound = False
@@ -179,7 +184,7 @@ def game(difficulty: str) -> None:
     playerScore = 0
     wolfScore = 0
     while (playerScore < 100 and wolfScore < 100):
-        result = round(difficulty)
+        result = game_round(difficulty)
         if result[0]:
             playerScore += result[1]
         else:
@@ -192,11 +197,11 @@ def game(difficulty: str) -> None:
 
 
 def play() -> None:
-    print("Welocme to Lobo!")
-    startInput = parseInput(["rules", ""], "Press Enter to begin a game. Type Rules for an explanation. Type Quit to quit.\n")
+    print("Welcome to Lobo!")
+    startInput = parseInput(["rules", ""], "Press Enter to begin a game. Type RULES for an explanation. Type QUIT to quit.\n")
     if startInput == "rules":
         print(RULES)
-        parseInput([""], ("Press Enter to begin a game. Type Quit at any time to quit."))
+        parseInput([""], ("Press Enter to begin a game. Type QUIT at any time to quit. "))
 
     keepPlaying = True
     while keepPlaying:

@@ -8,7 +8,7 @@ class Card:
     def __str__(self) -> str:
         return f"{self.printRank}{self.suitIcon}"
 
-    def greaterThan(self, otherCard: Card) -> bool:
+    def greaterThan(self, otherCard: "Card") -> bool:
         if self.rank > otherCard.rank:
             return True
         if self.rank < otherCard.rank:
@@ -17,7 +17,7 @@ class Card:
             return True
         return False
 
-    def lessThan(self, otherCard: Card) -> bool:
+    def lessThan(self, otherCard: "Card") -> bool:
         if self.rank < otherCard.rank:
             return True
         if self.rank > otherCard.rank:

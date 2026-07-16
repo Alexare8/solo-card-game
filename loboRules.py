@@ -50,4 +50,19 @@ The difficulty of the game can be adjusted by removing the highest rank cards.
 Easy uses ranks 1-8.
 Normal uses ranks 1-9.
 Hard uses ranks 1-10.
+
+Type FULL RULES at any time to see these rules again.
+Type QUIT at any time to quit.
+"""
+
+QUICK_RULES ="""
+Try to remove as many of the Wolf's cards as you can.
+PERFECT. Remove one card of the same rank. You draw the top card
+SUM. Add multiple cards to remove one of the Wolf's cards. You draw the top card
+SPLIT. One card removes cards of equal total rank. *The Wolf* draws the top card
+OVER. Remove one card of lesser rank. *The Wolf* draws equal to the difference
+FOLD. Stop the round and score, when further plays would only make things worse
+
+FULL RULES for a complete explanation of the game.
+QUIT at any time to quit.
 """

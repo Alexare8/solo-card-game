@@ -1,27 +1,27 @@
 class Card:
-    def __init__(self, rank: int, printRank: str, suit: int, suitIcon: str) -> None:
+    def __init__(self, rank: int, print_rank: str, suit: int, suit_icon: str) -> None:
         self.rank = rank
-        self.printRank = printRank
+        self.print_rank = print_rank
         self.suit = suit
-        self.suitIcon = suitIcon
+        self.suit_icon = suit_icon
 
     def __str__(self) -> str:
-        return f"{self.printRank}{self.suitIcon}"
+        return f"{self.print_rank}{self.suit_icon}"
 
-    def greaterThan(self, otherCard: "Card") -> bool:
-        if self.rank > otherCard.rank:
+    def greater_than(self, other_card: "Card") -> bool:
+        if self.rank > other_card.rank:
             return True
-        if self.rank < otherCard.rank:
+        if self.rank < other_card.rank:
             return False
-        if self.suit > otherCard.suit:
+        if self.suit > other_card.suit:
             return True
         return False
 
-    def lessThan(self, otherCard: "Card") -> bool:
-        if self.rank < otherCard.rank:
+    def less_than(self, other_card: "Card") -> bool:
+        if self.rank < other_card.rank:
             return True
-        if self.rank > otherCard.rank:
+        if self.rank > other_card.rank:
             return False
-        if self.suit < otherCard.suit:
+        if self.suit < other_card.suit:
             return True
         return False

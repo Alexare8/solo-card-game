@@ -28,7 +28,7 @@ in the card's ranks. There is no upper limit to the size of the Wolf's hand.
 FOLD. If you feel you cannot improve your situation, you can stop at any time.
 You might also be forced to stop if you have no moves left.
 
-The wolf does not take actions, just you. You may continue taking actions until
+The Wolf does not take actions, just you. You may continue taking actions until
 you are out of options, or you decide to fold, or the Wolf runs out of cards.
 
 If the Wolf is out of cards, you win the round! You score points equal to the

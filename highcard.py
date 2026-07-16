@@ -2,7 +2,7 @@ from deck import Deck
 from card import Card
 
 
-def displayHand(hand: list[Card]) -> str:
+def display_hand(hand: list[Card]) -> str:
     cards = [str(card) for card in hand]
     return "Hand: " + ", ".join(cards)
 
@@ -20,7 +20,7 @@ def game() -> int:
     hand = [deck.draw() for _ in range(HAND_SIZE)]
 
     print(f"You draw {HAND_SIZE} cards.")
-    print(displayHand(hand))
+    print(display_hand(hand))
     selection = ""
     while True:
         selection = input(f"Select a card (1-{len(hand)}): ")
@@ -28,9 +28,9 @@ def game() -> int:
             selection = int(selection)
             if selection in range(1, len(hand)+1):
                 break
-    playedCard = hand[selection-1]
-    print(f"Your card is {playedCard}. Top card is {deck.peekTop()}.")
-    if playedCard.greaterThan(deck.peekTop()):
+    played_card = hand[selection-1]
+    print(f"Your card is {played_card}. Top card is {deck.peek_top()}.")
+    if played_card.greater_than(deck.peek_top()):
         print("You win!")
         return 1
     print("You lose!")
@@ -40,9 +40,9 @@ def play() -> None:
     print("Welocme to High Card!")
     print("Select the card you wish to play from your hand. If it's higher than the card on top of the deck, you win!")
 
-    keepPlaying = True
+    keep_playing = True
     score = 0
-    while keepPlaying:
+    while keep_playing:
         score += game()
         print(f"Score: {score}")
         while True:
@@ -50,7 +50,7 @@ def play() -> None:
             if replay.upper() == "Y" or replay == "":
                 break
             elif replay.upper() == "N":
-                keepPlaying = False
+                keep_playing = False
                 break
 
 if __name__ == '__main__':

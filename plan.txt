@@ -16,6 +16,7 @@ X Lobo
 - Go fish
 X High Card
 - The Bogey
+- Scoundrel
 
 Card
 X Suit
